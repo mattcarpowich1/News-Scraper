@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 const request = require("request");
 
-function scrapeLatestArticles() {
+function scrape() {
 	return new Promise((resolve, reject) => {
 
 		request("https://www.theatlantic.com/latest/", (err, results, html) => {
@@ -42,5 +42,5 @@ function scrapeLatestArticles() {
 }
 
 module.exports = {
-	scrapeLatestArticles
+	scrape
 }
