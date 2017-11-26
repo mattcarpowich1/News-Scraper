@@ -21,7 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoHeadlines", {
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(MONGODB_URI, {
   useMongoClient: true
 });
 
