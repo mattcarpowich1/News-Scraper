@@ -50,9 +50,7 @@ function insertMany(articles, resolve) {
 				callback(error);
 			});
 
-	}, () => {
-		resolve();
-	});
+	}, resolve);
 }
 
 module.exports = { findAllAfterSaving };
